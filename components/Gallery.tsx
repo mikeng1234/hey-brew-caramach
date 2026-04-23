@@ -4,18 +4,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const IMAGES = [
-  { src: "/images/samples/sample1.jpg",  alt: "Hey Brew Cafe booth at an event",    wide: true,  tall: true  },
-  { src: "/images/samples/sample2.jpg",  alt: "Hey Brew Cafe drinks display",        wide: false, tall: false },
-  { src: "/images/samples/sample3.jpg",  alt: "Hey Brew Cafe cart setup",            wide: false, tall: false },
-  { src: "/images/samples/sample4.jpg",  alt: "Hey Brew Cafe milktea selection",     wide: false, tall: false },
-  { src: "/images/samples/sample5.jpg",  alt: "Hey Brew Cafe outdoor setup",         wide: false, tall: false },
-  { src: "/images/samples/sample6.jpg",  alt: "Hey Brew Cafe at a venue",            wide: false, tall: false },
-  { src: "/images/samples/sample7.jpg",  alt: "Hey Brew Cafe coffee cart",           wide: false, tall: false },
-  { src: "/images/samples/sample8.jpg",  alt: "Hey Brew Cafe drinks lineup",         wide: true,  tall: false },
-  { src: "/images/samples/sample9.jpg",  alt: "Hey Brew Cafe branded cups",          wide: false, tall: false },
-  { src: "/images/samples/sample10.jpg", alt: "Hey Brew Cafe event booth",           wide: false, tall: false },
-  { src: "/images/samples/sample11.jpg", alt: "Hey Brew Cafe setup detail",          wide: false, tall: false },
-  { src: "/images/samples/sample12.jpg", alt: "Hey Brew Cafe menu display",          wide: false, tall: false },
+  { src: "/images/samples/sample1.jpg",  alt: "Hey Brew Cafe booth at an event",  wide: true  },
+  { src: "/images/samples/sample2.jpg",  alt: "Hey Brew Cafe drinks display",      wide: false },
+  { src: "/images/samples/sample3.jpg",  alt: "Hey Brew Cafe cart setup",          wide: false },
+  { src: "/images/samples/sample4.jpg",  alt: "Hey Brew Cafe milktea selection",   wide: false },
+  { src: "/images/samples/sample5.jpg",  alt: "Hey Brew Cafe outdoor setup",       wide: false },
+  { src: "/images/samples/sample6.jpg",  alt: "Hey Brew Cafe at a venue",          wide: false },
+  { src: "/images/samples/sample7.jpg",  alt: "Hey Brew Cafe coffee cart",         wide: false },
+  { src: "/images/samples/sample8.jpg",  alt: "Hey Brew Cafe drinks lineup",       wide: true  },
+  { src: "/images/samples/sample9.jpg",  alt: "Hey Brew Cafe branded cups",        wide: false },
+  { src: "/images/samples/sample10.jpg", alt: "Hey Brew Cafe event booth",         wide: false },
+  { src: "/images/samples/sample11.jpg", alt: "Hey Brew Cafe setup detail",        wide: false },
+  { src: "/images/samples/sample12.jpg", alt: "Hey Brew Cafe menu display",        wide: false },
 ];
 
 export default function Gallery() {
@@ -62,8 +62,8 @@ export default function Gallery() {
           {IMAGES.map((img, i) => (
             <motion.div
               key={img.src}
-              className={`gallery-cell relative overflow-hidden group ${img.wide ? "lg:col-span-2" : ""} ${img.tall ? "lg:row-span-2" : ""}`}
-              style={{ borderRadius: "16px", background: "#d4c4b0", aspectRatio: img.tall ? "1/2" : "1/1" }}
+              className={`gallery-cell relative overflow-hidden group ${img.wide ? "col-span-2" : ""}`}
+              style={{ borderRadius: "16px", background: "#d4c4b0", aspectRatio: "1/1" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -74,7 +74,7 @@ export default function Gallery() {
                 alt={img.alt}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes={img.wide ? "(max-width: 1024px) 50vw, 50vw" : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"}
+                sizes={img.wide ? "50vw" : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"}
                 quality={80}
                 onError={(e) => {
                   const el = e.currentTarget as HTMLImageElement;
