@@ -1,3 +1,4 @@
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Navbar   from "@/components/Navbar";
 import Hero     from "@/components/Hero";
 import Why      from "@/components/Why";
@@ -9,15 +10,15 @@ import Footer   from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <ErrorBoundary compact><Navbar /></ErrorBoundary>
       <main>
-        <Hero />
-        <Why />
-        <Gallery />
-        <Packages />
-        <Inquiry />
+        <ErrorBoundary compact><Hero /></ErrorBoundary>
+        <ErrorBoundary compact><Why /></ErrorBoundary>
+        <ErrorBoundary compact><Gallery /></ErrorBoundary>
+        <ErrorBoundary compact><Packages /></ErrorBoundary>
+        <ErrorBoundary compact><Inquiry /></ErrorBoundary>
       </main>
-      <Footer />
+      <ErrorBoundary compact><Footer /></ErrorBoundary>
     </>
   );
 }

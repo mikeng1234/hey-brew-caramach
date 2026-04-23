@@ -1,33 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  /* Surfaces */
-  --color-surface:      #000000;
-  --color-surface-alt:  #0d0d0d;
-  --color-surface-card: #111111;
+  /* Surfaces — warm Clouds Cafe beige palette */
+  --color-surface:      #f5ede2;
+  --color-surface-alt:  #ede4d3;
+  --color-surface-card: #ffffff;
 
   /* Brand — caramel gold */
   --color-gold:        #cfa473;
   --color-gold-dim:    #b8895a;
+  --color-gold-text:   #8b5e3c;  /* darker gold for WCAG AA on beige */
 
-  /* Text */
-  --color-text-primary:   #ffffff;
-  --color-text-secondary: #cccccc;
-  --color-text-muted:     #888888;
+  /* Text — warm browns */
+  --color-text-primary:   #1e1209;
+  --color-text-secondary: #4a3728;
+  --color-text-muted:     #7a6555;
 
   /* Borders */
-  --color-border:       #1e1e1e;
+  --color-border:       #ddd0be;
 
   /* Feedback */
-  --color-error:        #ff6b6b;
+  --color-error:        #c0392b;
 
   /* Font */
   --font-primary: var(--font-figtree);
 }
 
 html, body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #f5ede2;
+  color: #1e1209;
   font-family: var(--font-primary), Figtree, sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -37,6 +38,6 @@ html, body {
 }
 
 ::-webkit-scrollbar        { width: 4px; }
-::-webkit-scrollbar-track  { background: #111111; }
-::-webkit-scrollbar-thumb  { background: #2a2a2a; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #cfa473; }
+::-webkit-scrollbar-track  { background: #ede4d3; }
+::-webkit-scrollbar-thumb  { background: #c4a882; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b8895a; }

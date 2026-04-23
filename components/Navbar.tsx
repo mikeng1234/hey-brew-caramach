@@ -11,7 +11,7 @@ const LINKS = [
   { label: "Inquire",  href: "#inquiry" },
 ];
 
-const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#cfa473]";
+const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8b5e3c]";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,8 +33,11 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Site navigation"
-      className="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-[#1e1e1e]"
-      style={{ background: scrolled ? "rgba(0,0,0,0.85)" : "rgba(0,0,0,0.3)" }}
+      className="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md border-b"
+      style={{
+        background: scrolled ? "rgba(245,237,226,0.95)" : "rgba(245,237,226,0.6)",
+        borderColor: "#ddd0be",
+      }}
     >
       <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}>
 
@@ -47,13 +50,14 @@ export default function Navbar() {
             width={216}
             className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-8" : "h-12"}`}
             priority
+            style={{ filter: "brightness(0) saturate(100%) invert(32%) sepia(25%) saturate(800%) hue-rotate(10deg) brightness(70%)" }}
             onError={(e) => {
               const el = e.currentTarget as HTMLImageElement;
               el.style.display = "none";
               if (el.parentElement) {
                 el.parentElement.textContent = "HEY BREW CAFE PH";
                 Object.assign(el.parentElement.style, {
-                  color: "#cfa473",
+                  color: "#8b5e3c",
                   fontWeight: "900",
                   fontSize: "1rem",
                   letterSpacing: "-0.02em",
@@ -64,12 +68,14 @@ export default function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-semibold" style={{ color: "#cccccc" }}>
+        <div className="hidden md:flex items-center gap-8 text-sm font-semibold" style={{ color: "#4a3728" }}>
           {LINKS.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className={`transition-colors duration-200 hover:text-white ${FOCUS} rounded`}
+              className={`transition-colors duration-200 ${FOCUS} rounded`}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#8b5e3c"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#4a3728"; }}
             >
               {l.label}
             </a>
@@ -80,8 +86,8 @@ export default function Navbar() {
         <motion.a
           href="#inquiry"
           className={`hidden md:inline-flex items-center px-6 py-2.5 text-sm font-bold transition-all duration-200 active:scale-[0.95] ${FOCUS}`}
-          style={{ background: "#cfa473", color: "#000000", borderRadius: "9999px" }}
-          whileHover={{ y: -3, boxShadow: "0 8px 24px rgba(207,164,115,0.35)", transition: { duration: 0.2 } }}
+          style={{ background: "#cfa473", color: "#1e1209", borderRadius: "9999px" }}
+          whileHover={{ y: -3, boxShadow: "0 8px 24px rgba(207,164,115,0.4)", transition: { duration: 0.2 } }}
           onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#b8895a"; }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#cfa473"; }}
         >
@@ -90,11 +96,12 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <button
-          className={`md:hidden p-2 text-white ${FOCUS} rounded`}
+          className={`md:hidden p-2 ${FOCUS} rounded`}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}
           aria-controls="mobile-nav"
+          style={{ color: "#4a3728" }}
         >
           <div className="w-6 space-y-1.5">
             <span className={`block h-0.5 bg-current transition-all duration-200 ${open ? "rotate-45 translate-y-2" : ""}`} />
@@ -126,8 +133,8 @@ export default function Navbar() {
             key="mobile-nav"
             id="mobile-nav"
             aria-label="Mobile navigation"
-            className="md:hidden relative z-50 border-t border-[#1e1e1e] px-6 py-6 space-y-4"
-            style={{ background: "rgba(0,0,0,0.97)" }}
+            className="md:hidden relative z-50 border-t px-6 py-6 space-y-4"
+            style={{ background: "#f5ede2", borderColor: "#ddd0be" }}
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -138,10 +145,10 @@ export default function Navbar() {
                 key={l.label}
                 href={l.href}
                 className={`block text-base font-semibold transition-colors duration-200 ${FOCUS} rounded`}
-                style={{ color: "#cccccc" }}
+                style={{ color: "#4a3728" }}
                 onClick={() => setOpen(false)}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#ffffff"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#cccccc"; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#8b5e3c"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#4a3728"; }}
               >
                 {l.label}
               </a>
@@ -149,7 +156,7 @@ export default function Navbar() {
             <a
               href="#inquiry"
               className={`inline-flex px-6 py-2.5 text-sm font-bold transition-all duration-200 active:scale-[0.95] ${FOCUS}`}
-              style={{ background: "#cfa473", color: "#000000", borderRadius: "9999px" }}
+              style={{ background: "#cfa473", color: "#1e1209", borderRadius: "9999px" }}
               onClick={() => setOpen(false)}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#b8895a"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#cfa473"; }}

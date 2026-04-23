@@ -20,14 +20,14 @@ const IMAGES = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24" style={{ background: "#0d0d0d" }}>
+    <section id="gallery" className="py-24" style={{ background: "#ede4d3" }}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-14">
           <motion.p
             className="text-xs font-bold tracking-[0.25em] uppercase mb-3"
-            style={{ color: "#cfa473" }}
+            style={{ color: "#8b5e3c" }}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -37,7 +37,7 @@ export default function Gallery() {
           </motion.p>
           <motion.h2
             className="font-black mb-4"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#ffffff", letterSpacing: "-0.03em" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#1e1209", letterSpacing: "-0.03em" }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -47,7 +47,7 @@ export default function Gallery() {
           </motion.h2>
           <motion.p
             className="text-sm max-w-lg mx-auto"
-            style={{ color: "#888888" }}
+            style={{ color: "#7a6555" }}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -63,7 +63,7 @@ export default function Gallery() {
             <motion.div
               key={img.src}
               className={`gallery-cell relative overflow-hidden group ${img.wide ? "lg:col-span-2" : ""} ${img.tall ? "lg:row-span-2" : ""}`}
-              style={{ borderRadius: "16px", background: "#111111", aspectRatio: img.tall ? "1/2" : "1/1" }}
+              style={{ borderRadius: "16px", background: "#d4c4b0", aspectRatio: img.tall ? "1/2" : "1/1" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -85,7 +85,7 @@ export default function Gallery() {
               />
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: "rgba(207,164,115,0.12)" }}
+                style={{ background: "rgba(207,164,115,0.18)" }}
               />
             </motion.div>
           ))}
