@@ -21,7 +21,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover object-center"
           onError={(e) => { (e.currentTarget as HTMLVideoElement).style.opacity = "0"; }}
         >
-          <source src="/videos/Coffeeblur.mp4" type="video/mp4" />
+          <source src="/videos/Coffeeblur3.mp4" type="video/mp4" />
         </video>
         {/* Warm sepia overlay */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(30,18,9,0.72) 0%, rgba(60,35,15,0.55) 100%)" }} />
