@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 // Update when branch count changes — last verified Apr 2026
@@ -11,18 +10,20 @@ const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outli
 export default function Hero() {
   return (
     <section id="hero" aria-labelledby="hero-heading" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#ede4d3" }}>
-      {/* Background */}
+      {/* Background video */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hb-hero.png"
-          alt="Hey Brew Cafe PH"
-          fill
-          className="object-cover object-center"
-          priority
-          quality={90}
-          onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
-        />
-        {/* Warm sepia overlay instead of pure black */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          onError={(e) => { (e.currentTarget as HTMLVideoElement).style.opacity = "0"; }}
+        >
+          <source src="/videos/Coffeeblur.mp4" type="video/mp4" />
+        </video>
+        {/* Warm sepia overlay */}
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(30,18,9,0.72) 0%, rgba(60,35,15,0.55) 100%)" }} />
       </div>
 
