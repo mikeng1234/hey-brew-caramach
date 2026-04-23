@@ -63,7 +63,7 @@ export default function Gallery() {
             <motion.div
               key={img.src}
               className={`gallery-cell relative overflow-hidden group ${img.wide ? "col-span-2" : ""}`}
-              style={{ borderRadius: "16px", background: "#d4c4b0", aspectRatio: "1/1" }}
+              style={{ borderRadius: "16px", background: "#d4c4b0", aspectRatio: img.wide ? "2/1" : "1/1" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
