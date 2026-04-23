@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const SECURITY_HEADERS = [
-  { key: "X-Frame-Options", value: "DENY" },
+  // Allow embedding only from the GenXcript portfolio; blocks all other framing
+  { key: "Content-Security-Policy", value: "frame-ancestors 'self' https://genxcript.vercel.app" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
