@@ -1,6 +1,8 @@
 "use client";
 
 import { Component, ReactNode } from "react";
+import Icon from "@mdi/react";
+import { mdiCoffeeOutline } from "@mdi/js";
 
 interface Props {
   children: ReactNode;
@@ -30,7 +32,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             className="flex flex-col items-center justify-center gap-3 py-16 text-center"
             style={{ background: "#ede4d3", borderRadius: "16px", margin: "2rem 0" }}
           >
-            <p className="text-2xl">☕</p>
+            <Icon path={mdiCoffeeOutline} size={1.2} color="#7a6555" aria-hidden="true" />
             <p className="text-sm" style={{ color: "#7a6555" }}>This section failed to load.</p>
             <button
               onClick={this.reset}
@@ -48,7 +50,7 @@ export default class ErrorBoundary extends Component<Props, State> {
           className="min-h-screen flex flex-col items-center justify-center gap-6 px-6 text-center"
           style={{ background: "#f5ede2" }}
         >
-          <p className="text-4xl">☕</p>
+          <Icon path={mdiCoffeeOutline} size={2} color="#7a6555" aria-hidden="true" />
           <h1 className="text-xl font-bold" style={{ color: "#1e1209" }}>
             Something went wrong.
           </h1>

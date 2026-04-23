@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Icon from "@mdi/react";
+import { mdiCoffee, mdiCup, mdiTrendingUp, mdiHandshake } from "@mdi/js";
 
 const CARDS = [
   {
-    icon: "☕",
+    icon: mdiCoffee,
     category: "Artisanal Coffee",
     name: "Locally Sourced Beans",
     desc: "Expertly roasted, locally sourced beans. From bold espressos to silky lattes — crafted for the modern Filipino coffee lover.",
@@ -13,7 +15,7 @@ const CARDS = [
     href: "#gallery",
   },
   {
-    icon: "🧋",
+    icon: mdiCup,
     category: "Premium Milktea",
     name: "Authentic Tea Blends",
     desc: "Authentic tea bases with rich milk and creative sinkers. Capturing the youth market and afternoon rush all day long.",
@@ -22,7 +24,7 @@ const CARDS = [
     href: "#gallery",
   },
   {
-    icon: "📈",
+    icon: mdiTrendingUp,
     category: "Business Model",
     name: "Proven ROI",
     desc: "Streamlined operations, comprehensive training, and aggressive marketing support to ensure a swift return on investment.",
@@ -31,7 +33,7 @@ const CARDS = [
     href: "#packages",
   },
   {
-    icon: "🤝",
+    icon: mdiHandshake,
     category: "Franchisee Support",
     name: "End-to-End Support",
     desc: "From setup to grand opening — full training, branding, operational guidance, and ongoing support for your branch.",
@@ -114,11 +116,11 @@ export default function Why() {
 
               {/* Icon */}
               <div
-                className="w-11 h-11 rounded-full flex items-center justify-center mb-5 shrink-0 text-xl"
+                className="w-11 h-11 rounded-full flex items-center justify-center mb-5 shrink-0"
                 style={{ background: "rgba(207,164,115,0.15)" }}
                 aria-hidden="true"
               >
-                {card.icon}
+                <Icon path={card.icon} size={1} color="#8b5e3c" />
               </div>
 
               <p className="text-xs font-bold mb-1" style={{ color: "#8b5e3c", letterSpacing: "0.12em", textTransform: "uppercase" }}>

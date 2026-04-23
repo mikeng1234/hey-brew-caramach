@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import Icon from "@mdi/react";
+import { mdiCheckDecagram, mdiCheckCircle } from "@mdi/js";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -148,7 +150,7 @@ export default function Inquiry() {
             {/* Badge */}
             <div className="flex items-start gap-3 p-4 mb-8"
               style={{ background: "#ffffff", border: "1px solid #e8d9c8", borderRadius: "16px" }}>
-              <span className="text-xl shrink-0 mt-0.5" aria-hidden="true">✅</span>
+              <Icon path={mdiCheckDecagram} size={1} color="#8b5e3c" className="shrink-0 mt-0.5" aria-hidden="true" />
               <div>
                 <h4 className="text-sm font-bold mb-0.5" style={{ color: "#1a1209" }}>Open Nationwide</h4>
                 <p className="text-xs leading-relaxed" style={{ color: "#6b5744" }}>
@@ -196,7 +198,7 @@ export default function Inquiry() {
             <div aria-live="polite" aria-atomic="true">
               {status === "success" ? (
                 <div ref={successRef} className="flex flex-col items-center justify-center py-12 text-center gap-4">
-                  <span className="text-4xl">🎉</span>
+                  <Icon path={mdiCheckCircle} size={2.5} color="#cfa473" aria-hidden="true" />
                   <h4 className="text-base font-bold" style={{ color: "#1a1209" }}>Inquiry Received!</h4>
                   <p className="text-sm" style={{ color: "#6b5744" }}>
                     Our team will reach out within 1–2 business days.

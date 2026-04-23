@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Icon from "@mdi/react";
+import { mdiPhone, mdiEmailOutline } from "@mdi/js";
 
 const LINKS = [
   { label: "Why Join", href: "#why" },
@@ -31,15 +33,15 @@ export default function Footer() {
               A Modern Heritage Brew.
             </p>
             <div className="space-y-1.5">
-              <a href="tel:09677963243" className={`block text-xs transition-colors duration-200 ${FOCUS}`} style={{ color: "#7a6555" }}
+              <a href="tel:09677963243" className={`flex items-center gap-1.5 text-xs transition-colors duration-200 ${FOCUS}`} style={{ color: "#7a6555" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#8b5e3c"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#7a6555"; }}>
-                <span aria-hidden="true">📞</span>{" "}0967 796 3243
+                <Icon path={mdiPhone} size={0.55} aria-hidden="true" />0967 796 3243
               </a>
-              <a href="mailto:heybrewcafeph@gmail.com" className={`block text-xs transition-colors duration-200 ${FOCUS}`} style={{ color: "#7a6555" }}
+              <a href="mailto:heybrewcafeph@gmail.com" className={`flex items-center gap-1.5 text-xs transition-colors duration-200 ${FOCUS}`} style={{ color: "#7a6555" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#8b5e3c"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#7a6555"; }}>
-                <span aria-hidden="true">✉️</span>{" "}heybrewcafeph@gmail.com
+                <Icon path={mdiEmailOutline} size={0.55} aria-hidden="true" />heybrewcafeph@gmail.com
               </a>
             </div>
           </div>
