@@ -1,12 +1,13 @@
-import ErrorBoundary from "@/components/ErrorBoundary";
-import Navbar     from "@/components/Navbar";
-import Hero       from "@/components/Hero";
-import Why        from "@/components/Why";
-import Gallery    from "@/components/Gallery";
-import Packages   from "@/components/Packages";
-import CupBanner  from "@/components/CupBanner";
-import Inquiry    from "@/components/Inquiry";
-import Footer     from "@/components/Footer";
+import ErrorBoundary    from "@/components/ErrorBoundary";
+import Navbar           from "@/components/Navbar";
+import Hero             from "@/components/Hero";
+import Why              from "@/components/Why";
+import Gallery          from "@/components/Gallery";
+import Packages         from "@/components/Packages";
+import CupBanner        from "@/components/CupBanner";
+import Inquiry          from "@/components/Inquiry";
+import Footer           from "@/components/Footer";
+import MessengerBubble  from "@/components/MessengerBubble";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <ErrorBoundary compact><Inquiry /></ErrorBoundary>
       </main>
       <ErrorBoundary compact><Footer /></ErrorBoundary>
+      <MessengerBubble />
     </>
   );
 }

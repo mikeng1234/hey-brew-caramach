@@ -21,14 +21,16 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Image
-              src="/images/hb-logo-horizontal-white-nobg.png"
-              alt="Hey Brew Cafe PH"
-              width={160}
-              height={48}
-              className="object-contain mb-2"
-              style={{ filter: "brightness(0) sepia(1) saturate(5) hue-rotate(335deg) brightness(0.55)" }}
-            />
+            <a href="https://www.facebook.com/HeyBrewPH" target="_blank" rel="noopener noreferrer" className={`inline-block ${FOCUS}`}>
+              <Image
+                src="/images/hb-logo-horizontal-white-nobg.png"
+                alt="Hey Brew Cafe PH"
+                width={160}
+                height={48}
+                className="object-contain mb-2"
+                style={{ filter: "brightness(0) sepia(1) saturate(5) hue-rotate(335deg) brightness(0.55)" }}
+              />
+            </a>
             <p className="text-xs mt-0.5 mb-2 font-medium" style={{ color: "#7a6555" }}>
               A Modern Heritage Brew.
             </p>
