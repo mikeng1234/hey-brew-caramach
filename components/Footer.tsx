@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const LINKS = [
   { label: "Why Join", href: "#why" },
   { label: "Gallery",  href: "#gallery" },
@@ -12,15 +14,20 @@ const FOCUS = "focus-visible:outline focus-visible:outline-2 focus-visible:outli
 export default function Footer() {
   return (
     <footer className="border-t" style={{ background: "#ede4d3", borderColor: "#ddd0be" }}>
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
 
           {/* Brand */}
           <div>
-            <p className="text-base font-black tracking-tight" style={{ color: "#8b5e3c" }}>
-              HEY BREW CAFE PH
-            </p>
-            <p className="text-xs mt-1 mb-3 font-medium" style={{ color: "#7a6555" }}>
+            <Image
+              src="/images/hb-logo-horizontal-white-nobg.png"
+              alt="Hey Brew Cafe PH"
+              width={160}
+              height={48}
+              className="object-contain mb-2"
+              style={{ filter: "brightness(0) sepia(1) saturate(5) hue-rotate(335deg) brightness(0.55)" }}
+            />
+            <p className="text-xs mt-0.5 mb-2 font-medium" style={{ color: "#7a6555" }}>
               A Modern Heritage Brew.
             </p>
             <div className="space-y-1.5">
@@ -54,7 +61,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderColor: "#ddd0be" }}>
+        <div className="mt-4 pt-4 border-t flex flex-col sm:flex-row items-center justify-between gap-2" style={{ borderColor: "#ddd0be" }}>
           <p className="text-xs" style={{ color: "#7a6555" }}>
             © {new Date().getFullYear()} Hey Brew Cafe PH. A Modern Heritage Brew.
           </p>
